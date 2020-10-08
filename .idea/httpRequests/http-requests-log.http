@@ -1,0 +1,454 @@
+POST http://localhost:3000/api/signup
+Accept: */*
+Cache-Control: no-cache
+Authorization: Basic T3lhbW86ZGhkaGpkaA==
+
+{     "firstName":"Oyamo",     "lastName":"Brian" }
+
+<> 2020-10-02T024644.400.json
+
+###
+
+POST http://localhost:3000/api/signup
+Accept: */*
+Cache-Control: no-cache
+Authorization: Basic T3lhbW86ZGhkaGpkaA==
+
+{     "firstName":"Oyamo",     "lastName":"Brian" }
+
+<> 2020-10-02T024542.400.json
+
+###
+
+POST http://localhost:3000/api/signup?firstName=Oyamo&lastName=Brian&passWord1=mofaya*_(__(__
+Accept: */*
+Cache-Control: no-cache
+Authorization: Basic T3lhbW86ZGhkaGpkaA==
+
+firstName=Oyamo
+
+<> 2020-10-02T024017.400.json
+
+###
+
+POST http://localhost:3000/api/signup?firstName=Oyamo&lastName=Brian&passWord1=mofaya*_(__(__
+Accept: */*
+Cache-Control: no-cache
+Authorization: Basic T3lhbW86ZGhkaGpkaA==
+
+firstName=Oyamo
+
+<> 2020-10-02T024003.400.json
+
+###
+
+POST http://localhost:3000/api/login?firstName=Oyamo&lastName=Brian&passWord1=mofaya*_(__(__
+Accept: */*
+Cache-Control: no-cache
+Authorization: Basic T3lhbW86ZGhkaGpkaA==
+
+firstName=Oyamo
+
+<> 2020-10-02T023955.401.json
+
+###
+
+POST http://localhost:3000/api/login?firstName=Oyamo&lastName=Brian&passWord1=mofaya*_(__(__
+Accept: */*
+Cache-Control: no-cache
+Authorization: Basic T3lhbW86ZGhkaGpkaA==
+
+<> 2020-10-02T023656-3.401.json
+
+###
+
+POST http://localhost:3000/api/login?firstName=Oyamo&lastName=Brian&passWord1=mofaya*_(__(__
+Accept: */*
+Cache-Control: no-cache
+Authorization: Basic T3lhbW86ZGhkaGpkaA==
+
+<> 2020-10-02T023656-2.401.json
+
+###
+
+POST http://localhost:3000/api/login?firstName=Oyamo&lastName=Brian&passWord1=mofaya*_(__(__
+Accept: */*
+Cache-Control: no-cache
+Authorization: Basic T3lhbW86ZGhkaGpkaA==
+
+<> 2020-10-02T023656-1.401.json
+
+###
+
+POST http://localhost:3000/api/login?firstName=Oyamo&lastName=Brian&passWord1=mofaya*_(__(__
+Accept: */*
+Cache-Control: no-cache
+Authorization: Basic T3lhbW86ZGhkaGpkaA==
+
+<> 2020-10-02T023656.401.json
+
+###
+
+POST http://localhost:3000/api/login?firstName=Oyamo&lastName=Brian&passWord1=mofaya*_(__(__
+Accept: */*
+Cache-Control: no-cache
+Authorization: Basic T3lhbW86ZGhkaGpkaA==
+
+<> 2020-10-02T023655-2.401.json
+
+###
+
+POST http://localhost:3000/api/login?firstName=Oyamo&lastName=Brian&passWord1=mofaya*_(__(__
+Accept: */*
+Cache-Control: no-cache
+Authorization: Basic T3lhbW86ZGhkaGpkaA==
+
+<> 2020-10-02T023655-1.401.json
+
+###
+
+POST http://localhost:3000/api/login?firstName=Oyamo&lastName=Brian&passWord1=mofaya*_(__(__
+Accept: */*
+Cache-Control: no-cache
+Authorization: Basic T3lhbW86ZGhkaGpkaA==
+
+<> 2020-10-02T023655.401.json
+
+###
+
+POST http://localhost:3000/api/login?firstName=Oyamo&lastName=Brian&passWord1=mofaya*_(__(__
+Accept: */*
+Cache-Control: no-cache
+Authorization: Basic T3lhbW86ZGhkaGpkaA==
+
+<> 2020-10-02T023654.401.json
+
+###
+
+POST http://localhost:3000/api/login?firstName=Oyamo&lastName=Brian&passWord1=mofaya*_(__(__
+Accept: */*
+Cache-Control: no-cache
+Authorization: Basic T3lhbW86ZGhkaGpkaA==
+
+<> 2020-10-02T023653.401.json
+
+###
+
+POST http://localhost:3000/api/login?firstName=Oyamo&lastName=Brian&passWord1=mofaya*_(__(__
+Accept: */*
+Cache-Control: no-cache
+Authorization: Basic T3lhbW86ZGhkaGpkaA==
+
+<> 2020-10-02T023534.401.json
+
+###
+
+GET http://localhost:3000/api/profile?firstName=Oyamo&lastName=Brian&passWord1=mofaya*_(__(__
+Accept: */*
+Cache-Control: no-cache
+Authorization: Basic T3lhbW86ZGhkaGpkaA==
+
+<> 2020-10-02T023513.500.json
+
+###
+
+GET http://localhost:3000/api/profile?=&firstName=Oyamo&lastName=Brian&passWord1=mofaya*_(__(__
+Accept: */*
+Cache-Control: no-cache
+Authorization: Basic T3lhbW86ZGhkaGpkaA==
+
+<> 2020-10-02T023357.500.json
+
+###
+
+POST http://localhost:3000/api/profile?=&firstName=Oyamo&lastName=Brian&passWord1=mofaya*_(__(__
+Accept: */*
+Cache-Control: no-cache
+Authorization: Basic T3lhbW86ZGhkaGpkaA==
+
+<> 2020-10-02T023349.404.html
+
+###
+
+POST http://localhost:3000/api/signup?=&firstName=Oyamo&lastName=Brian&passWord1=mofaya*_(__(__
+Accept: */*
+Cache-Control: no-cache
+Authorization: Basic T3lhbW86ZGhkaGpkaA==
+
+<> 2020-10-02T023342.400.json
+
+###
+
+POST http://localhost:3000/api/signup?=&firstName=Oyamo&lastName=Brian&passWord1=mofaya*_(__(__
+Accept: */*
+Cache-Control: no-cache
+Authorization: Basic T3lhbW86ZGhkaGpkaA==
+
+<> 2020-10-02T023316.400.json
+
+###
+
+POST http://localhost:3000/api/signup?=&firstName=Oyamo&lastName=Brian&passWord1=mofaya*_(__(__
+Accept: */*
+Cache-Control: no-cache
+Authorization: Basic T3lhbW86ZGhkaGpkaA==
+
+<> 2020-10-02T023314.400.json
+
+###
+
+POST http://localhost:3000/api/signup?=&firstName=Oyamo&lastName=Brian&passWord1=mofaya*_(__(__
+Accept: */*
+Cache-Control: no-cache
+Authorization: ddddddddd
+
+<> 2020-10-02T023223.400.json
+
+###
+
+POST http://localhost:3000/api/signup?=&firstName=Oyamo&lastName=Brian&passWord1=mofaya*_(__(__
+Accept: */*
+Cache-Control: no-cache
+Authorization: ddddddddd
+
+<> 2020-10-02T022838.400.json
+
+###
+
+POST http://localhost:3000/api/signup?=&firstName=Oyamo&lastName=Brian&passWord1=mofaya*_(__(__
+Accept: */*
+Cache-Control: no-cache
+Authorization: ddddddddd
+
+<> 2020-10-02T022745.400.json
+
+###
+
+POST http://localhost:3000/api/signup?=&firstName=Oyamo&lastName=Brian&passWord1=mofaya*_(__(__
+Accept: */*
+Cache-Control: no-cache
+Authorization: ddddddddd
+
+<> 2020-10-02T022744.400.json
+
+###
+
+POST http://localhost:3000/api/signup?=&firstName=Oyamo&lastName=Brian&passWord1=mofaya*_(__(__
+Accept: */*
+Cache-Control: no-cache
+Authorization: ddddddddd
+
+<> 2020-10-02T022741.400.json
+
+###
+
+POST http://localhost:3000/api/signup
+Accept: */*
+Cache-Control: no-cache
+Authorization: ddddddddd
+
+<> 2020-10-02T022607.400.json
+
+###
+
+GET http://localhost:3000/api/signup
+Accept: */*
+Cache-Control: no-cache
+Authorization: ddddddddd
+
+<> 2020-10-02T022559.404.html
+
+###
+
+GET http://localhost:3000/api/profile
+Accept: */*
+Cache-Control: no-cache
+Authorization: ddddddddd
+
+<> 2020-10-02T022520.500.json
+
+###
+
+GET http://localhost:3000/api/profile
+Accept: */*
+Cache-Control: no-cache
+Authorization: ddddddddd
+
+<> 2020-10-02T112852.500.json
+
+###
+
+GET http://localhost:3000/api/profile
+Accept: */*
+Cache-Control: no-cache
+Authorization: ddddddddd
+
+###
+
+GET http://localhost:3000/api/profile
+Accept: */*
+Cache-Control: no-cache
+Authorization: ddddddddd
+
+###
+
+GET http://localhost:3000/api/profile
+Accept: */*
+Cache-Control: no-cache
+Authorization: ddddddddd
+
+###
+
+GET http://localhost:3000/api/prifile
+Accept: */*
+Cache-Control: no-cache
+Authorization: ddddddddd
+
+<> 2020-10-02T112524.404.html
+
+###
+
+GET http://localhost:3000/api/prifilr
+Accept: */*
+Cache-Control: no-cache
+Authorization: ddddddddd
+
+<> 2020-10-02T112522.404.html
+
+###
+
+POST http://localhost:3000/
+Accept: */*
+Cache-Control: no-cache
+Authorization: ddddddddd
+
+<> 2020-10-02T112509.404.html
+
+###
+
+POST http://localhost:3000/
+Accept: */*
+Cache-Control: no-cache
+Authorization: ddddddddd
+
+<> 2020-10-02T112507.404.html
+
+###
+
+POST http://localhost:3000/
+Accept: */*
+Cache-Control: no-cache
+Authorization: ddddddddd
+
+<> 2020-10-02T112505.404.html
+
+###
+
+POST http://localhost:3000/api/
+Accept: */*
+Cache-Control: no-cache
+Authorization: ddddddddd
+
+<> 2020-10-02T112443.404.html
+
+###
+
+POST http://localhost:3000/api/login
+Accept: */*
+Cache-Control: no-cache
+Authorization: ddddddddd
+
+<> 2020-10-02T112440.401.json
+
+###
+
+POST http://localhost:3000/api/
+Accept: */*
+Cache-Control: no-cache
+Authorization: ddddddddd
+
+<> 2020-10-02T112435-2.404.html
+
+###
+
+POST http://localhost:3000/api/
+Accept: */*
+Cache-Control: no-cache
+Authorization: ddddddddd
+
+<> 2020-10-02T112435-1.404.html
+
+###
+
+POST http://localhost:3000/api/
+Accept: */*
+Cache-Control: no-cache
+Authorization: ddddddddd
+
+<> 2020-10-02T112435.404.html
+
+###
+
+POST http://localhost:3000/api/
+Accept: */*
+Cache-Control: no-cache
+Authorization: ddddddddd
+
+<> 2020-10-02T112434-3.404.html
+
+###
+
+POST http://localhost:3000/api/
+Accept: */*
+Cache-Control: no-cache
+Authorization: ddddddddd
+
+<> 2020-10-02T112434-2.404.html
+
+###
+
+POST http://localhost:3000/api/
+Accept: */*
+Cache-Control: no-cache
+Authorization: ddddddddd
+
+<> 2020-10-02T112434-1.404.html
+
+###
+
+POST http://localhost:3000/api/
+Accept: */*
+Cache-Control: no-cache
+Authorization: ddddddddd
+
+<> 2020-10-02T112434.404.html
+
+###
+
+POST http://localhost:3000/api/
+Accept: */*
+Cache-Control: no-cache
+Authorization: ddddddddd
+
+<> 2020-10-02T112433-3.404.html
+
+###
+
+POST http://localhost:3000/api/
+Accept: */*
+Cache-Control: no-cache
+Authorization: ddddddddd
+
+<> 2020-10-02T112433-2.404.html
+
+###
+
+POST http://localhost:3000/api/
+Accept: */*
+Cache-Control: no-cache
+Authorization: ddddddddd
+
+<> 2020-10-02T112433-1.404.html
+
+###
+

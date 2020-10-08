@@ -1,0 +1,194 @@
+const mongoose = require('mongoose');
+const bcrypt = require('bcryptjs');
+const config = require('../config')
+    .get(process.env.NODE_ENV);
+const jwt = require('jsonwebtoken');
+const crypto = require('crypto');
+
+// Define the user Schema
+const userSchema = mongoose.Schema({
+    firstName: {
+        type: String,
+        required: true
+    },
+
+    lastName: {
+        type: String,
+        required: true
+    },
+
+    userName: {
+        type: String
+    },
+
+    telephone:{
+      type: String
+    },
+
+    state:{
+        type: String
+    },
+
+    country:{
+        type: String
+    },
+
+    email: {
+        type: String,
+        required: true,
+        trim: true,
+        unique: 1
+    },
+
+    passWord: {
+        type: String,
+        required: true
+    },
+
+    token: {
+        type: String
+    },
+
+    refreshToken: {
+        type: String
+    },
+
+    resetToken: {
+        type: String
+    }
+});
+
+// Signing up a user by Hashing the password
+userSchema.pre('save', function (next) {
+    const user = this;
+
+    if(user.isModified('passWord') || user.isNew){
+        user.passWord = bcrypt.hashSync(user.passWord, 10);
+        next();
+    }else{
+        next();
+    }
+});
+// Login
+userSchema.methods.attemptLogin = function (password) {
+    const hash = this.passWord;
+    return new Promise((resolve, reject) => {
+        const match = bcrypt.compareSync(password, hash);
+        resolve(match);
+    })
+};
+// Generate user Token
+userSchema.methods.generateToken = function () {
+    const user = this;
+    return new Promise((resolve, reject) => {
+        // Generate Access Token
+        user.token = jwt.sign(
+            {
+                userId: user._id.toHexString()
+            },
+            config.SECRET,
+            {
+                algorithm: 'HS256',
+                expiresIn: config.TOKEN_LIFE
+            }
+        );
+
+        // Generate Refresh token
+        user.refreshToken = jwt.sign(
+            {
+                userId: user._id.toHexString()
+            },
+            config.REFRESH_TOKEN_SECRET,
+            {
+                algorithm: 'HS256',
+                expiresIn: config.REFRESH_TOKEN_LIFE
+            }
+        );
+        user.save((err, user) => {
+            if (!err) {
+                resolve(user);
+            } else {
+                reject(err);
+            }
+        })
+    })
+};
+
+// finding user by token
+userSchema.statics.findByToken = function (token) {
+    const user = this;
+    return new Promise((resolve, reject) => {
+        jwt.verify(token, config.SECRET, (err, decode) => {
+            if (!err) {
+                user.findOne({_id: decode.userId || '', token: token}, (err, user) => {
+                    if (err == null) {
+                        resolve(user);
+                    } else {
+                        reject(err);
+                    }
+                })
+            } else {
+                reject(err);
+            }
+        });
+    })
+};
+// Delete the token
+// Bahati ft Mbogi genje
+// Stormzy Burnaboy
+userSchema.methods.clearToken = function () {
+    const user = this;
+    return new Promise((resolve, reject) => {
+        user.update({$unset: {token: 1}}, (err, user) => {
+            if (!err) {
+                resolve(user);
+            } else {
+                reject(err);
+            }
+        });
+    })
+};
+// Generate A password reset Token
+userSchema.methods.resetTokenSync = async function (){
+    const user = this;
+    const  email = user.email;
+
+    const randomBytes = crypto.pseudoRandomBytes(32);
+    const token = jwt.sign(
+        {
+            randToken: randomBytes.toString('base64')
+        },
+        config.RESET_TOKEN,
+        {
+            algorithm: 'HS256',
+            expiresIn: config.RESET_LIFE
+        }
+    );
+    user.resetToken = token;
+    user.save((err, user)=>{
+      console.log(user)
+    })
+}
+userSchema.methods.resetPassword = function (password, token){
+    return new Promise((resolve, reject )=> {
+        jwt.verify(token, config.SECRET, (err, decode) => {
+            if(!err){
+                this.updateOne(
+                    {resetToken: token},
+                    {passWord: bcrypt.hashSync(password, 10)},
+                    (err, doc) => {
+                        if (err) {
+                            resolve([err, 0])
+                        } else {
+                            resolve([null, 1]);
+                        }
+                    }
+                );
+            }else{
+                resolve([err, 0])
+            }
+        });
+    });
+}
+const User = mongoose.model('User', userSchema);
+module.exports = User;
