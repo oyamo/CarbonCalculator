@@ -51,7 +51,8 @@ mongoose.Promise = global.Promise;
 mongoose.connect(config.DATABASE,
     {
         useNewUrlParser: true,
-        useUnifiedTopology: true
+        useUnifiedTopology: true,
+        useCreateIndex: true
     },
     err => {
         if (err) {
