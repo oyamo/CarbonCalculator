@@ -3,14 +3,14 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const educationSchema = new Schema({
-   userId: {
+   profileId: {
         type: String
    },
     educationLevel:{
        type: String
     },
     schoolName:{
-
+        type: String
     },
     monthStarted:{ // Month
        type: String

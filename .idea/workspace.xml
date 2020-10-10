@@ -13,7 +13,14 @@
     <list default="true" id="6904d61e-0faf-4b33-856c-de2c67306f5e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/user" beforeDir="false" afterPath="$PROJECT_DIR$/models/user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/profiles/education.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/profiles/education.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/profiles/work.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/profiles/work.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/auth/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/auth/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/auth/logout.js" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/auth/logout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/auth/resetpassword.js" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/auth/resetpassword.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/auth/signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/auth/signup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/users/profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/users/profile.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -1108,7 +1115,9 @@
       <workItem from="1601548470048" duration="11280000" />
       <workItem from="1601611600998" duration="48947000" />
       <workItem from="1601874387523" duration="19982000" />
-      <workItem from="1602172879663" duration="12598000" />
+      <workItem from="1602172879663" duration="14862000" />
+      <workItem from="1602235253434" duration="666000" />
+      <workItem from="1602291740618" duration="408000" />
     </task>
     <servers />
   </component>
@@ -1152,22 +1161,22 @@
       <screen x="0" y="24" width="1024" height="720" />
     </state>
     <state x="347" y="289" key="Github.CreateGistDialog/0.24.1024.720@0.24.1024.720" timestamp="1601661343835" />
-    <state width="1003" height="313" key="GridCell.Tab.0.bottom" timestamp="1602227295767">
+    <state width="1003" height="313" key="GridCell.Tab.0.bottom" timestamp="1602231675204">
       <screen x="0" y="24" width="1024" height="720" />
     </state>
-    <state width="1003" height="313" key="GridCell.Tab.0.bottom/0.24.1024.720@0.24.1024.720" timestamp="1602227295767" />
-    <state width="1003" height="313" key="GridCell.Tab.0.center" timestamp="1602227295766">
+    <state width="1003" height="313" key="GridCell.Tab.0.bottom/0.24.1024.720@0.24.1024.720" timestamp="1602231675204" />
+    <state width="1003" height="313" key="GridCell.Tab.0.center" timestamp="1602231675204">
       <screen x="0" y="24" width="1024" height="720" />
     </state>
-    <state width="1003" height="313" key="GridCell.Tab.0.center/0.24.1024.720@0.24.1024.720" timestamp="1602227295766" />
-    <state width="1003" height="313" key="GridCell.Tab.0.left" timestamp="1602227295765">
+    <state width="1003" height="313" key="GridCell.Tab.0.center/0.24.1024.720@0.24.1024.720" timestamp="1602231675204" />
+    <state width="1003" height="313" key="GridCell.Tab.0.left" timestamp="1602231675203">
       <screen x="0" y="24" width="1024" height="720" />
     </state>
-    <state width="1003" height="313" key="GridCell.Tab.0.left/0.24.1024.720@0.24.1024.720" timestamp="1602227295765" />
-    <state width="1003" height="313" key="GridCell.Tab.0.right" timestamp="1602227295766">
+    <state width="1003" height="313" key="GridCell.Tab.0.left/0.24.1024.720@0.24.1024.720" timestamp="1602231675203" />
+    <state width="1003" height="313" key="GridCell.Tab.0.right" timestamp="1602231675204">
       <screen x="0" y="24" width="1024" height="720" />
     </state>
-    <state width="1003" height="313" key="GridCell.Tab.0.right/0.24.1024.720@0.24.1024.720" timestamp="1602227295766" />
+    <state width="1003" height="313" key="GridCell.Tab.0.right/0.24.1024.720@0.24.1024.720" timestamp="1602231675204" />
     <state width="980" height="2" key="GridCell.Tab.1.bottom" timestamp="1601915255892">
       <screen x="0" y="24" width="1024" height="720" />
     </state>
@@ -1233,32 +1242,32 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/routes/auth/signup.js</url>
+          <url>file://$PROJECT_DIR$/microservices/auth/signup.js</url>
           <line>41</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/routes/auth/signup.js</url>
+          <url>file://$PROJECT_DIR$/microservices/auth/signup.js</url>
           <line>47</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/routes/auth/signup.js</url>
+          <url>file://$PROJECT_DIR$/microservices/auth/signup.js</url>
           <line>51</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/routes/auth/signup.js</url>
+          <url>file://$PROJECT_DIR$/microservices/auth/signup.js</url>
           <line>57</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/routes/auth/signup.js</url>
+          <url>file://$PROJECT_DIR$/microservices/auth/signup.js</url>
           <line>59</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/routes/auth/signup.js</url>
+          <url>file://$PROJECT_DIR$/microservices/auth/signup.js</url>
           <line>62</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
@@ -1278,7 +1287,7 @@
           <option name="timeStamp" value="26" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/routes/auth/resetpassword.js</url>
+          <url>file://$PROJECT_DIR$/microservices/auth/resetpassword.js</url>
           <line>12</line>
           <option name="timeStamp" value="33" />
         </line-breakpoint>

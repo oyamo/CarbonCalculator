@@ -7,12 +7,12 @@ const mongoose = require('mongoose');
 const config = require('./config').get(process.env.NODE_ENV);
 
 
-const loginRouter = require('./routes/auth/login');
-const logoutRouter = require('./routes/auth/logout');
-const signUpRouter = require('./routes/auth/signup');
-const profileRouter = require('./routes/users/profile');
-const indexRouter = require('./routes/index');
-const forgotPasswordRouter = require('./routes/auth/resetpassword');
+const loginRouter = require('./microservices/auth/login');
+const logoutRouter = require('./microservices/auth/logout');
+const signUpRouter = require('./microservices/auth/signup');
+const profileRouter = require('./microservices/users/profile');
+const indexRouter = require('./microservices/index');
+const forgotPasswordRouter = require('./microservices/auth/resetpassword');
 
 
 const app = express();
