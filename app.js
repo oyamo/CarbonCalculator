@@ -25,11 +25,12 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/api/signup', signUpRouter);
-app.use('/api/login', loginRouter);
-app.use('/api/logout', logoutRouter);
-app.use('/api/profile', profileRouter);
-app.use('/api/forgot', forgotPasswordRouter);
+//Microservices
+app.use('/api/users/signup', signUpRouter);
+app.use('/api/users/login', loginRouter);
+app.use('/api/users/logout', logoutRouter);
+app.use('/api/users/profile', profileRouter);
+app.use('/api/users/forgot', forgotPasswordRouter);
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
     next(createError(404));
