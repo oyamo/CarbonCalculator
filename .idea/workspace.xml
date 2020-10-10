@@ -12,10 +12,9 @@
   <component name="ChangeListManager">
     <list default="true" id="6904d61e-0faf-4b33-856c-de2c67306f5e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/user" beforeDir="false" afterPath="$PROJECT_DIR$/models/user" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/validator.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/validator.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -1098,6 +1097,23 @@
       <command value="yarn" />
     </option>
   </component>
+  <component name="RunManager" selected="npm.test">
+    <configuration name="test" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="test" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.test" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -1112,7 +1128,7 @@
       <workItem from="1601874387523" duration="19982000" />
       <workItem from="1602172879663" duration="14862000" />
       <workItem from="1602235253434" duration="666000" />
-      <workItem from="1602291740618" duration="3684000" />
+      <workItem from="1602291740618" duration="24821000" />
     </task>
     <servers />
   </component>
@@ -1156,22 +1172,22 @@
       <screen x="0" y="24" width="1024" height="720" />
     </state>
     <state x="347" y="289" key="Github.CreateGistDialog/0.24.1024.720@0.24.1024.720" timestamp="1601661343835" />
-    <state width="1003" height="534" key="GridCell.Tab.0.bottom" timestamp="1602294148194">
+    <state width="1003" height="359" key="GridCell.Tab.0.bottom" timestamp="1602304651209">
       <screen x="0" y="24" width="1024" height="720" />
     </state>
-    <state width="1003" height="534" key="GridCell.Tab.0.bottom/0.24.1024.720@0.24.1024.720" timestamp="1602294148194" />
-    <state width="1003" height="534" key="GridCell.Tab.0.center" timestamp="1602294148193">
+    <state width="1003" height="359" key="GridCell.Tab.0.bottom/0.24.1024.720@0.24.1024.720" timestamp="1602304651209" />
+    <state width="1003" height="359" key="GridCell.Tab.0.center" timestamp="1602304651209">
       <screen x="0" y="24" width="1024" height="720" />
     </state>
-    <state width="1003" height="534" key="GridCell.Tab.0.center/0.24.1024.720@0.24.1024.720" timestamp="1602294148193" />
-    <state width="1003" height="534" key="GridCell.Tab.0.left" timestamp="1602294148192">
+    <state width="1003" height="359" key="GridCell.Tab.0.center/0.24.1024.720@0.24.1024.720" timestamp="1602304651209" />
+    <state width="1003" height="359" key="GridCell.Tab.0.left" timestamp="1602304651208">
       <screen x="0" y="24" width="1024" height="720" />
     </state>
-    <state width="1003" height="534" key="GridCell.Tab.0.left/0.24.1024.720@0.24.1024.720" timestamp="1602294148192" />
-    <state width="1003" height="534" key="GridCell.Tab.0.right" timestamp="1602294148194">
+    <state width="1003" height="359" key="GridCell.Tab.0.left/0.24.1024.720@0.24.1024.720" timestamp="1602304651208" />
+    <state width="1003" height="359" key="GridCell.Tab.0.right" timestamp="1602304651209">
       <screen x="0" y="24" width="1024" height="720" />
     </state>
-    <state width="1003" height="534" key="GridCell.Tab.0.right/0.24.1024.720@0.24.1024.720" timestamp="1602294148194" />
+    <state width="1003" height="359" key="GridCell.Tab.0.right/0.24.1024.720@0.24.1024.720" timestamp="1602304651209" />
     <state width="980" height="2" key="GridCell.Tab.1.bottom" timestamp="1601915255892">
       <screen x="0" y="24" width="1024" height="720" />
     </state>
