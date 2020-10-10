@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
+
 const config = require('../config')
     .get(process.env.NODE_ENV);
 const jwt = require('jsonwebtoken');

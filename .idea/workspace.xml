@@ -13,14 +13,9 @@
     <list default="true" id="6904d61e-0faf-4b33-856c-de2c67306f5e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/profiles/education.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/profiles/education.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/profiles/work.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/profiles/work.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/auth/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/auth/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/auth/logout.js" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/auth/logout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/auth/resetpassword.js" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/auth/resetpassword.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/auth/signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/auth/signup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/users/profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/users/profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/user" beforeDir="false" afterPath="$PROJECT_DIR$/models/user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -1117,7 +1112,7 @@
       <workItem from="1601874387523" duration="19982000" />
       <workItem from="1602172879663" duration="14862000" />
       <workItem from="1602235253434" duration="666000" />
-      <workItem from="1602291740618" duration="408000" />
+      <workItem from="1602291740618" duration="3684000" />
     </task>
     <servers />
   </component>
@@ -1137,10 +1132,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="0" y="60" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601707575914">
+    <state x="0" y="60" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602303799173">
       <screen x="0" y="24" width="1024" height="720" />
     </state>
-    <state x="0" y="60" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.24.1024.720@0.24.1024.720" timestamp="1601707575914" />
+    <state x="0" y="60" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.24.1024.720@0.24.1024.720" timestamp="1602303799173" />
     <state x="304" y="191" width="421" height="381" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1602216274079">
       <screen x="0" y="24" width="1024" height="720" />
     </state>
@@ -1161,22 +1156,22 @@
       <screen x="0" y="24" width="1024" height="720" />
     </state>
     <state x="347" y="289" key="Github.CreateGistDialog/0.24.1024.720@0.24.1024.720" timestamp="1601661343835" />
-    <state width="1003" height="313" key="GridCell.Tab.0.bottom" timestamp="1602231675204">
+    <state width="1003" height="534" key="GridCell.Tab.0.bottom" timestamp="1602294148194">
       <screen x="0" y="24" width="1024" height="720" />
     </state>
-    <state width="1003" height="313" key="GridCell.Tab.0.bottom/0.24.1024.720@0.24.1024.720" timestamp="1602231675204" />
-    <state width="1003" height="313" key="GridCell.Tab.0.center" timestamp="1602231675204">
+    <state width="1003" height="534" key="GridCell.Tab.0.bottom/0.24.1024.720@0.24.1024.720" timestamp="1602294148194" />
+    <state width="1003" height="534" key="GridCell.Tab.0.center" timestamp="1602294148193">
       <screen x="0" y="24" width="1024" height="720" />
     </state>
-    <state width="1003" height="313" key="GridCell.Tab.0.center/0.24.1024.720@0.24.1024.720" timestamp="1602231675204" />
-    <state width="1003" height="313" key="GridCell.Tab.0.left" timestamp="1602231675203">
+    <state width="1003" height="534" key="GridCell.Tab.0.center/0.24.1024.720@0.24.1024.720" timestamp="1602294148193" />
+    <state width="1003" height="534" key="GridCell.Tab.0.left" timestamp="1602294148192">
       <screen x="0" y="24" width="1024" height="720" />
     </state>
-    <state width="1003" height="313" key="GridCell.Tab.0.left/0.24.1024.720@0.24.1024.720" timestamp="1602231675203" />
-    <state width="1003" height="313" key="GridCell.Tab.0.right" timestamp="1602231675204">
+    <state width="1003" height="534" key="GridCell.Tab.0.left/0.24.1024.720@0.24.1024.720" timestamp="1602294148192" />
+    <state width="1003" height="534" key="GridCell.Tab.0.right" timestamp="1602294148194">
       <screen x="0" y="24" width="1024" height="720" />
     </state>
-    <state width="1003" height="313" key="GridCell.Tab.0.right/0.24.1024.720@0.24.1024.720" timestamp="1602231675204" />
+    <state width="1003" height="534" key="GridCell.Tab.0.right/0.24.1024.720@0.24.1024.720" timestamp="1602294148194" />
     <state width="980" height="2" key="GridCell.Tab.1.bottom" timestamp="1601915255892">
       <screen x="0" y="24" width="1024" height="720" />
     </state>
@@ -1273,17 +1268,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/models/user</url>
-          <line>133</line>
+          <line>134</line>
           <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/models/user</url>
-          <line>129</line>
+          <line>130</line>
           <option name="timeStamp" value="25" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/models/user</url>
-          <line>126</line>
+          <line>127</line>
           <option name="timeStamp" value="26" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
