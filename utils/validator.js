@@ -44,7 +44,7 @@ class Validator {
      * Tests if the payload is an email address
      * @returns {Validator}
      */
-    isEmail(){
+    isEmail() {
         const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
         this._isEmail = re.test(this._payload);
         this._result.push(this._isEmail);
@@ -59,12 +59,12 @@ class Validator {
      * Can detect url-encoded strings with query-strings embedded
      * @returns {Validator}
      */
-    isUrl(validateScheme = true){
+    isUrl(validateScheme = true) {
         const re1 = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/;
         const re2 = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/;
-        if(validateScheme){
+        if (validateScheme) {
             this._isURL = re1.test(this._payload);
-        }else {
+        } else {
             this._isURL = re2.test(this._payload);
         }
         this._result.push(this._isURL);
@@ -76,7 +76,7 @@ class Validator {
      * Validates ipV4 addresses
      * @returns {Validator}
      */
-    isIPV4(){
+    isIPV4() {
         const re = /$((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(\.|$)){4}$/;
         this._isIPV4 = re.test(this._payload);
         this._result.push(this._isIPV4);
@@ -89,24 +89,24 @@ class Validator {
      * Matches IPV6
      * @returns {Validator}
      */
-    isIPV6(){
+    isIPV6() {
         const re = new RegExp(`(
-        ([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|
-        ([0-9a-fA-F]{1,4}:){1,7}:|
-        ([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|
-        ([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}| 
-        ([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}| 
-        ([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}| 
-        ([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|
-        [0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|
-        :((:[0-9a-fA-F]{1,4}){1,7}|:)|
-        fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|    
-        ::(ffff(:0{1,4}){0,1}:){0,1}
-        ((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}
-        (25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|       
-        ((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}
-        (25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])
-        )`.trim());
+                            ([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|
+                            ([0-9a-fA-F]{1,4}:){1,7}:|
+                            ([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|
+                            ([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}| 
+                            ([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}| 
+                            ([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}| 
+                            ([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|
+                            [0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|
+                            :((:[0-9a-fA-F]{1,4}){1,7}|:)|
+                            fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|    
+                            ::(ffff(:0{1,4}){0,1}:){0,1}
+                            ((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}
+                            (25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|       
+                            ((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}
+                            (25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])
+                            )`.trim());
         this._isIPV6 = re.test(this._payload);
         this._result.push(this._isIPV6);
         this._resultVerbose.push({isIPV6: this._isIPV6});
@@ -117,7 +117,7 @@ class Validator {
      * Matches telephone numbers
      * @returns {Validator}
      */
-    isTelephone(){
+    isTelephone() {
         const re = /(^\+[0-9]{2}|^\+[0-9]{2}\(0\)|^\(\+[0-9]{2}\)\(0\)|^00[0-9]{2}|^0)([0-9]{9}$|[0-9\-\s]{10}$)/
         this._isTelephone = re.test(this._payload);
         this._result.push(this._isTelephone);
@@ -131,10 +131,10 @@ class Validator {
      * @param n
      * @returns {Validator}
      */
-    hasLength(n){
+    hasLength(n) {
         this._hasLength = this._len === n;
         this._result.push(this._hasLength);
-        this._resultVerbose.push({hasLength : this._hasLength});
+        this._resultVerbose.push({hasLength: this._hasLength});
         return this;
     }
 
@@ -143,7 +143,7 @@ class Validator {
      * @param n
      * @returns {Validator}
      */
-    hasMinLen(n){
+    hasMinLen(n) {
         this._hasMinLen = this._len >= n;
         this._result.push(this._hasMinLen);
         this._resultVerbose.push({_hasMinLen: this._hasMinLen});
@@ -155,7 +155,7 @@ class Validator {
      * @param n
      * @returns {Validator}
      */
-    hasMaxLen(n){
+    hasMaxLen(n) {
         this._hasMaxLen = this._len <= n;
         this._result.push(this._hasMaxLen);
         this._resultVerbose.push({hasMaxLen: this._hasMaxLen});
@@ -167,7 +167,7 @@ class Validator {
      * Validates whether the input is all digits
      * @returns {Validator}
      */
-    isDigits(){
+    isDigits() {
         const re = /^[0-9]+$/
         this._isDigits = re.test(this._payload);
         this._result.push(this._isDigits);
@@ -179,7 +179,7 @@ class Validator {
      *
      * @returns {Validator}
      */
-    isOnlyLetters(){
+    isOnlyLetters() {
         const re = /^[a-zA-Z]+$/;
         this._isOnlyLetters = re.test(this._payload);
         this._result.push(this._isOnlyLetters);
@@ -192,7 +192,7 @@ class Validator {
      * Smart syntax to eleviate you some pain in the ...
      * @returns {Validator}
      */
-    get and(){
+    get and() {
         this._nextLogical = 'and';
         return this;
     }
@@ -201,7 +201,7 @@ class Validator {
      * Logical or
      * @returns {Validator}
      */
-    get or(){
+    get or() {
         this._nextLogical = 'or';
         return this
     }
@@ -210,12 +210,14 @@ class Validator {
      *The result of the validation in boolean
      * @returns {boolean}
      */
-    exec(){
+    exec() {
         return this._result
-            .reduce((a,b,i)=>{
+            .reduce((a, b, i) => {
                 return a && b;
             });
     }
 
 
 }
+
+module.exports = Validator
