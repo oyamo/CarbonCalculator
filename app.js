@@ -4,8 +4,11 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose');
-const config = require('./config').get(process.env.NODE_ENV);
 const cors = require('cors');
+const compression = require('compression');
+require('dotenv').config()
+const config = require('./config').get(process.env.NODE_ENV);
+
 
 const loginRouter = require('./microservices/auth/login');
 const logoutRouter = require('./microservices/auth/logout');
@@ -23,7 +26,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(compression());
 app.use('/', indexRouter);
 //Microservices
 app.use('/api/users/signup', signUpRouter);
