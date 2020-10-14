@@ -1,8 +1,5 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
-
-const config = require('../config')
-    .get(process.env.NODE_ENV);
 const jwt = require('jsonwebtoken');
 const crypto = require('crypto');
 
@@ -20,11 +17,13 @@ const userSchema = mongoose.Schema({
 
     userName: {
         type: String,
-        trim: true
+        trim: true,
+        required: true
     },
 
     telephone:{
-      type: String
+      type: String,
+        required: true
     },
 
     state:{
@@ -90,10 +89,10 @@ userSchema.methods.generateToken = function () {
             {
                 userId: user._id.toHexString()
             },
-            config.SECRET,
+            process.env.SECRET,
             {
                 algorithm: 'HS256',
-                expiresIn: config.TOKEN_LIFE
+                expiresIn: process.env.TOKEN_LIFE
             }
         );
 
@@ -102,10 +101,10 @@ userSchema.methods.generateToken = function () {
             {
                 userId: user._id.toHexString()
             },
-            config.REFRESH_TOKEN_SECRET,
+            process.env.REFRESH_TOKEN_SECRET,
             {
                 algorithm: 'HS256',
-                expiresIn: config.REFRESH_TOKEN_LIFE
+                expiresIn: process.env.REFRESH_TOKEN_LIFE
             }
         );
         user.save((err, user) => {
@@ -122,19 +121,24 @@ userSchema.methods.generateToken = function () {
 userSchema.statics.findByToken = function (token) {
     const user = this;
     return new Promise((resolve, reject) => {
-        jwt.verify(token, config.SECRET, (err, decode) => {
-            if (!err) {
-                user.findOne({_id: decode.userId || '', token: token}, (err, user) => {
-                    if (err == null) {
-                        resolve(user);
-                    } else {
-                        reject(err);
-                    }
-                })
-            } else {
-                reject(err);
-            }
-        });
+        try{
+            jwt.verify(token, process.env.SECRET, (err, decode) => {
+                if (!err) {
+                    user.findOne({_id: decode.userId || '', token: token}, (err, user) => {
+                        if (err == null) {
+                            resolve(user);
+                        } else {
+                            reject(err);
+                        }
+                    })
+                } else {
+                    reject(err);
+                }
+            });
+        }catch (e) {
+            reject(e.message)
+        }
+
     })
 };
 // Delete the token
@@ -158,24 +162,23 @@ userSchema.methods.resetTokenSync = async function (){
     const  email = user.email;
 
     const randomBytes = crypto.pseudoRandomBytes(32);
-    const token = jwt.sign(
+    user.resetToken = jwt.sign(
         {
             randToken: randomBytes.toString('base64')
         },
-        config.RESET_TOKEN,
+        process.env.RESET_TOKEN,
         {
             algorithm: 'HS256',
-            expiresIn: config.RESET_LIFE
+            expiresIn: process.env.RESET_LIFE
         }
     );
-    user.resetToken = token;
     user.save((err, user)=>{
       console.log(user)
     })
 }
 userSchema.methods.resetPassword = function (password, token){
     return new Promise((resolve, reject )=> {
-        jwt.verify(token, config.SECRET, (err, decode) => {
+        jwt.verify(token, process.env.SECRET, (err, decode) => {
             if(!err){
                 this.updateOne(
                     {resetToken: token},

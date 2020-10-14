@@ -4,10 +4,11 @@ const router = express.Router()
 
 router.post('/', (req, res) => {
     let token = req.cookies.auth;
+
+    // get the password from the body of the request
     const passWord = req.body.passWord;
     const email = req.body.email;
-    //*Let Us see if the user has logged in
-    // */
+    // Let Us see if the user has logged in
 
     if (token != null) {
         User.findByToken(token)
