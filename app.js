@@ -14,7 +14,8 @@ const fs = require('fs');
 const loginRouter = require('./microservices/auth/login');
 const logoutRouter = require('./microservices/auth/logout');
 const signUpRouter = require('./microservices/auth/signup');
-const profileRouter = require('./microservices/users/profile');
+const myprofileRouter = require('./microservices/users/myProfile');
+const otherProfileRouter = require('./microservices/users/otherUsers')
 const indexRouter = require('./microservices/index');
 const forgotPasswordRouter = require('./microservices/auth/resetpassword');
 
@@ -39,8 +40,11 @@ app.use('/api/auth/signup', signUpRouter);
 app.use('/api/auth/login', loginRouter);
 app.use('/api/auth/logout', logoutRouter);
 app.use('/api/auth/forgot', forgotPasswordRouter);
-app.use('/api/users/profile', profileRouter);
+//Current user profile
+//User must be logged in
+app.use('/api/users/profile', myprofileRouter);
 
+app.use('/api/users', otherProfileRouter);
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
     next(createError(404));

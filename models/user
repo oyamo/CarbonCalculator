@@ -5,6 +5,10 @@ const crypto = require('crypto');
 
 // Define the user Schema
 const userSchema = mongoose.Schema({
+    profile:{
+      type: mongoose.Schema.ObjectId,
+      ref: 'Profile'
+    },
     firstName: {
         type: String,
         required: true
@@ -59,6 +63,8 @@ const userSchema = mongoose.Schema({
     resetToken: {
         type: String
     }
+},{
+    timestamps: true
 });
 
 // Signing up a user by Hashing the password
