@@ -4,18 +4,24 @@ const Schema = mongoose.Schema
 
 const profileSchema = new Schema({
     userId: {
-        index:true,
-        type: String
+        type: Schema.ObjectId,
+        ref:'User'
     },
     industry:{
         type: String
     },
-    skills: {
-        type: Array
+    skills: [{
+        type: String
+    }],
+    headline:{
+        type: String
     },
-    profilePictures:{
-      type: Array
+    about:{
+        type: String
     },
+    profilePictures:[{
+      type: String
+    }],
     featuredProfilePic :{
         type: String
     },

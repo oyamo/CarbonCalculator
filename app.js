@@ -4,15 +4,18 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose');
-const config = require('./config').get(process.env.NODE_ENV);
 const cors = require('cors');
 const helmet = require('helmet')
 const compression = require('compression')
+require('dotenv').config()
+const fs = require('fs');
+
 
 const loginRouter = require('./microservices/auth/login');
 const logoutRouter = require('./microservices/auth/logout');
 const signUpRouter = require('./microservices/auth/signup');
-const profileRouter = require('./microservices/users/profile');
+const myprofileRouter = require('./microservices/users/myProfile');
+const otherProfileRouter = require('./microservices/users/otherUsers')
 const indexRouter = require('./microservices/index');
 const forgotPasswordRouter = require('./microservices/auth/resetpassword');
 
@@ -27,14 +30,21 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(helmet())
 app.use(compression())
+app.use(logger('common',{
+    stream: fs.createWriteStream(process.env.LOGS_DIR)
+}))
 
 app.use('/', indexRouter);
 //Microservices
-app.use('/api/users/signup', signUpRouter);
-app.use('/api/users/login', loginRouter);
-app.use('/api/users/logout', logoutRouter);
-app.use('/api/users/profile', profileRouter);
-app.use('/api/users/forgot', forgotPasswordRouter);
+app.use('/api/auth/signup', signUpRouter);
+app.use('/api/auth/login', loginRouter);
+app.use('/api/auth/logout', logoutRouter);
+app.use('/api/auth/forgot', forgotPasswordRouter);
+//Current user profile
+//User must be logged in
+app.use('/api/users/profile', myprofileRouter);
+
+app.use('/api/users', otherProfileRouter);
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
     next(createError(404));
@@ -49,11 +59,15 @@ app.use(function (err, req, res, next) {
 
     // render the error page
     res.status(err.status || 500);
-    res.send('error');
+    if(process.env.NODE_ENV === 'development'){
+        res.json(err);
+    }else{
+        res.json({message:"ServerError"});
+    }
 });
 //Database Setup
 mongoose.Promise = global.Promise;
-mongoose.connect(config.DATABASE,
+mongoose.connect(process.env.DATABASE,
     {
         useNewUrlParser: true,
         useUnifiedTopology: true,

@@ -12,8 +12,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6904d61e-0faf-4b33-856c-de2c67306f5e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/validator.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/validator.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/validator.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/validator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/ds/hashtable.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/ds/hashtable.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +29,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
   <component name="ProjectId" id="1iGGkJ7x8Q6d941ip0eTYdbA89F" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -43,13 +48,19 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="10.21.0" />
     <property name="javascript.nodejs.core.library.typings.version" value="10.17.35" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/js/vanilla/web-socket-chat" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/routes/auth" />
     </key>
@@ -1096,7 +1107,7 @@
       <command value="yarn" />
     </option>
   </component>
-  <component name="RunManager" selected="npm.test">
+  <component name="RunManager" selected="Node.js.bin/www">
     <configuration name="test" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -1127,7 +1138,16 @@
       <workItem from="1601874387523" duration="19982000" />
       <workItem from="1602172879663" duration="14862000" />
       <workItem from="1602235253434" duration="666000" />
-      <workItem from="1602291740618" duration="28413000" />
+      <workItem from="1602291740618" duration="29989000" />
+      <workItem from="1602349718114" duration="3787000" />
+      <workItem from="1602426624815" duration="8000" />
+      <workItem from="1602500946264" duration="5048000" />
+      <workItem from="1602521855121" duration="676000" />
+      <workItem from="1602525160691" duration="47000" />
+      <workItem from="1602577944051" duration="2845000" />
+      <workItem from="1602651282829" duration="10438000" />
+      <workItem from="1602734202138" duration="10945000" />
+      <workItem from="1603339183138" duration="4623000" />
     </task>
     <servers />
   </component>
@@ -1159,10 +1179,10 @@
       <screen x="0" y="24" width="1024" height="720" />
     </state>
     <state x="414" y="308" width="186" height="101" key="#com.intellij.ide.util.TreeDirectoryChooserDialog/0.24.1024.720@0.24.1024.720" timestamp="1601551431964" />
-    <state x="245" y="135" width="524" height="493" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1601551163798">
+    <state x="245" y="135" width="524" height="493" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1602503308391">
       <screen x="0" y="24" width="1024" height="720" />
     </state>
-    <state x="245" y="135" width="524" height="493" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.24.1024.720@0.24.1024.720" timestamp="1601551163798" />
+    <state x="245" y="135" width="524" height="493" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.24.1024.720@0.24.1024.720" timestamp="1602503308391" />
     <state x="460" y="148" width="424" height="479" key="FileChooserDialogImpl" timestamp="1601915254373">
       <screen x="0" y="24" width="1024" height="720" />
     </state>
@@ -1171,22 +1191,22 @@
       <screen x="0" y="24" width="1024" height="720" />
     </state>
     <state x="347" y="289" key="Github.CreateGistDialog/0.24.1024.720@0.24.1024.720" timestamp="1601661343835" />
-    <state width="1003" height="184" key="GridCell.Tab.0.bottom" timestamp="1602338020889">
+    <state width="1003" height="18" key="GridCell.Tab.0.bottom" timestamp="1602780854376">
       <screen x="0" y="24" width="1024" height="720" />
     </state>
-    <state width="1003" height="184" key="GridCell.Tab.0.bottom/0.24.1024.720@0.24.1024.720" timestamp="1602338020889" />
-    <state width="1003" height="184" key="GridCell.Tab.0.center" timestamp="1602338020886">
+    <state width="1003" height="18" key="GridCell.Tab.0.bottom/0.24.1024.720@0.24.1024.720" timestamp="1602780854376" />
+    <state width="1003" height="18" key="GridCell.Tab.0.center" timestamp="1602780854375">
       <screen x="0" y="24" width="1024" height="720" />
     </state>
-    <state width="1003" height="184" key="GridCell.Tab.0.center/0.24.1024.720@0.24.1024.720" timestamp="1602338020886" />
-    <state width="1003" height="184" key="GridCell.Tab.0.left" timestamp="1602338020884">
+    <state width="1003" height="18" key="GridCell.Tab.0.center/0.24.1024.720@0.24.1024.720" timestamp="1602780854375" />
+    <state width="1003" height="18" key="GridCell.Tab.0.left" timestamp="1602780854374">
       <screen x="0" y="24" width="1024" height="720" />
     </state>
-    <state width="1003" height="184" key="GridCell.Tab.0.left/0.24.1024.720@0.24.1024.720" timestamp="1602338020884" />
-    <state width="1003" height="184" key="GridCell.Tab.0.right" timestamp="1602338020888">
+    <state width="1003" height="18" key="GridCell.Tab.0.left/0.24.1024.720@0.24.1024.720" timestamp="1602780854374" />
+    <state width="1003" height="18" key="GridCell.Tab.0.right" timestamp="1602780854375">
       <screen x="0" y="24" width="1024" height="720" />
     </state>
-    <state width="1003" height="184" key="GridCell.Tab.0.right/0.24.1024.720@0.24.1024.720" timestamp="1602338020888" />
+    <state width="1003" height="18" key="GridCell.Tab.0.right/0.24.1024.720@0.24.1024.720" timestamp="1602780854375" />
     <state width="980" height="2" key="GridCell.Tab.1.bottom" timestamp="1601915255892">
       <screen x="0" y="24" width="1024" height="720" />
     </state>
@@ -1235,6 +1255,10 @@
       <screen x="0" y="24" width="1024" height="720" />
     </state>
     <state width="980" height="2" key="GridCell.Tab.3.right/0.24.1024.720@0.24.1024.720" timestamp="1601915255894" />
+    <state x="94" y="127" width="826" height="505" key="IDE.errors.dialog" timestamp="1603342119925">
+      <screen x="0" y="24" width="1024" height="720" />
+    </state>
+    <state x="94" y="127" width="826" height="505" key="IDE.errors.dialog/0.24.1024.720@0.24.1024.720" timestamp="1603342119925" />
     <state x="366" y="241" width="424" height="379" key="RestClientTextRequest" timestamp="1601639139711">
       <screen x="0" y="24" width="1024" height="720" />
     </state>
@@ -1253,48 +1277,23 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/microservices/auth/signup.js</url>
-          <line>41</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/microservices/auth/signup.js</url>
-          <line>47</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/microservices/auth/signup.js</url>
-          <line>51</line>
+          <line>92</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/microservices/auth/signup.js</url>
-          <line>57</line>
+          <line>118</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/microservices/auth/signup.js</url>
-          <line>59</line>
+          <line>120</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/microservices/auth/signup.js</url>
-          <line>62</line>
+          <line>123</line>
           <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/models/user</url>
-          <line>134</line>
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/models/user</url>
-          <line>130</line>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/models/user</url>
-          <line>127</line>
-          <option name="timeStamp" value="26" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/microservices/auth/resetpassword.js</url>

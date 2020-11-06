@@ -3,28 +3,13 @@ const User = require('../../models/user');
 const router = express.Router()
 
 router.post('/', (req, res) => {
-    let token = req.cookies.auth;
-    const passWord = req.body.passWord;
-    const email = req.body.email;
-    //*Let Us see if the user has logged in
-    // */
 
-    if (token != null) {
-        User.findByToken(token)
-            .then(user => {
-                if (user !== null) {
-                    // lets not allow this because the user might try to spy the token patterns of our site
-                    return res.status(400)
-                        .json({message: "user already logged in"})
-                }
-            })
-            .catch(err=>{
-                console.log(err);
-            });
-    }
-    /*
-    * The user has not yet logged in, so lets log him in*/
-    User.findOne({email: email}, (err, user) => {
+    // get the password and email from the body of the request
+    const passWord = req.body.passWord || '';
+    const email = req.body.email || '';
+    const userName = req.body.userName || '';
+    // Let Us see if the user has logged in
+    User.findOne( {$or: [{email},{userName}] }, (err, user) => {
         if (!user) {
             return res.status(401)
                 .json({message: "User does not exist"})
@@ -32,6 +17,7 @@ router.post('/', (req, res) => {
             user.attemptLogin(passWord)
                 .then(matched => {
                     if (!matched) {
+                        // Password incorrect
                         return res.status(401)
                             .json({message: "Passwords incorrect"});
                     }else{
