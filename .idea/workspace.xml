@@ -11,12 +11,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6904d61e-0faf-4b33-856c-de2c67306f5e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/users/profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/users/myProfile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/profiles/profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/profiles/profile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/user" beforeDir="false" afterPath="$PROJECT_DIR$/models/user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/ds/hashtable.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/ds/hashtable.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +28,12 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
   </component>
   <component name="ProjectId" id="1iGGkJ7x8Q6d941ip0eTYdbA89F" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -1145,6 +1147,7 @@
       <workItem from="1602577944051" duration="2845000" />
       <workItem from="1602651282829" duration="10438000" />
       <workItem from="1602734202138" duration="10945000" />
+      <workItem from="1603339183138" duration="4623000" />
     </task>
     <servers />
   </component>
@@ -1252,6 +1255,10 @@
       <screen x="0" y="24" width="1024" height="720" />
     </state>
     <state width="980" height="2" key="GridCell.Tab.3.right/0.24.1024.720@0.24.1024.720" timestamp="1601915255894" />
+    <state x="94" y="127" width="826" height="505" key="IDE.errors.dialog" timestamp="1603342119925">
+      <screen x="0" y="24" width="1024" height="720" />
+    </state>
+    <state x="94" y="127" width="826" height="505" key="IDE.errors.dialog/0.24.1024.720@0.24.1024.720" timestamp="1603342119925" />
     <state x="366" y="241" width="424" height="379" key="RestClientTextRequest" timestamp="1601639139711">
       <screen x="0" y="24" width="1024" height="720" />
     </state>
