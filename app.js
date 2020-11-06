@@ -6,6 +6,8 @@ const logger = require('morgan');
 const mongoose = require('mongoose');
 const config = require('./config').get(process.env.NODE_ENV);
 const cors = require('cors');
+const helmet = require('helmet')
+const compression = require('compression')
 
 const loginRouter = require('./microservices/auth/login');
 const logoutRouter = require('./microservices/auth/logout');
@@ -23,6 +25,8 @@ app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(helmet())
+app.use(compression())
 
 app.use('/', indexRouter);
 //Microservices
