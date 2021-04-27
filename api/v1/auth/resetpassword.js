@@ -1,13 +1,13 @@
  const express = require('express');
 const router = express.Router();
-const User = require('../../models/user');
+const User = require('../../../models/user');
 
 router.get('/sendtoken',async (req, res) => {
    const email = req.query.email || '';
    console.log(email)
    const user = await User.findOne({email: email}).exec();
    if(user != null){
-      //Clear the user tokens to force-log-out
+      //Clear the user.js tokens to force-log-out
       await user.clearToken();
       // Wait till the password is reset
       console.log(user)

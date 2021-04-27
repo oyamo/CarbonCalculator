@@ -8,20 +8,6 @@
 class Validator {
     constructor(payload) {
         this._payload = payload;
-        this._len = payload.length;
-        // Validation holders
-        this._isEmail = false;
-        this._isTelephone = false;
-        this._isIPV4 = false;
-        this._isIPV6 = false;
-        this._isURL = false;
-        this._isFTPURL = false;
-        this._hasLength = false;
-        this._hasMinLen = false;
-        this._hasMaxLen = false;
-        this._isDigits = false;
-        this._isOnlyLetters = false
-        // The results of the validation
         this._result = [];
         this._resultVerbose = [];
         this._nextLogical = null; // For our smart syntax; dealing with  ( and | or)
@@ -30,13 +16,12 @@ class Validator {
 
     /**
      *
-     * @param p
      * @returns {Validator}
      * Singleton access
+     * @param payload
      */
-    static with(p) {
-        const vd = new Validator(p);
-        return vd;
+    static with(...payload) {
+        return new Validator(payload);
     }
 
 
@@ -46,9 +31,8 @@ class Validator {
      */
     isEmail() {
         const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-        this._isEmail = re.test(this._payload);
-        this._result.push(this._isEmail);
-        this._resultVerbose.push({isEmail: this._isEmail});
+        for (const payload of this._payload) {
+            this._result.push(re.test(payload));}
         return this;
     }
 
@@ -62,13 +46,16 @@ class Validator {
     isUrl(validateScheme = true) {
         const re1 = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/;
         const re2 = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/;
-        if (validateScheme) {
-            this._isURL = re1.test(this._payload);
-        } else {
-            this._isURL = re2.test(this._payload);
+
+        let res = false;
+        for(const  payload of this._payload) {
+            if (validateScheme) {
+                res = re1.test(payload);
+            } else {
+                res = re2.test(payload);
+            }
+            this._result.push(res);
         }
-        this._result.push(this._isURL);
-        this._resultVerbose.push({isUrl: this._isURL});
         return this;
     }
 
@@ -78,9 +65,9 @@ class Validator {
      */
     isIPV4() {
         const re = /$((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(\.|$)){4}$/;
-        this._isIPV4 = re.test(this._payload);
-        this._result.push(this._isIPV4);
-        this._resultVerbose.push({isIPV4: this._isIPV4});
+        for (const payload of this._payload) {
+            this._result.push(re.test(this.payload));
+        }
         return this;
     }
 
@@ -107,9 +94,9 @@ class Validator {
                             ((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}
                             (25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])
                             )`.trim());
-        this._isIPV6 = re.test(this._payload);
-        this._result.push(this._isIPV6);
-        this._resultVerbose.push({isIPV6: this._isIPV6});
+       for(const payload of this._payload) {
+           this._result.push(re.test(payload));
+       }
         return this;
     }
 
@@ -119,9 +106,9 @@ class Validator {
      */
     isTelephone() {
         const re = /(^\+[0-9]{2}|^\+[0-9]{2}\(0\)|^\(\+[0-9]{2}\)\(0\)|^00[0-9]{2}|^0)([0-9]{9}$|[0-9\-\s]{10}$)/
-        this._isTelephone = re.test(this._payload);
-        this._result.push(this._isTelephone);
-        this._resultVerbose.push({isTelephone: this._isTelephone});
+        for(const payload of this._payload) {
+            this._result.push(re.test(payload));
+        }
         return this;
     }
 
@@ -132,9 +119,9 @@ class Validator {
      * @returns {Validator}
      */
     hasLength(n) {
-        this._hasLength = this._len === n;
-        this._result.push(this._hasLength);
-        this._resultVerbose.push({hasLength: this._hasLength});
+        for (const payload of this._payload) {
+            this._result.push(payload.length === n);
+        }
         return this;
     }
 
@@ -144,9 +131,9 @@ class Validator {
      * @returns {Validator}
      */
     hasMinLen(n) {
-        this._hasMinLen = this._len >= n;
-        this._result.push(this._hasMinLen);
-        this._resultVerbose.push({_hasMinLen: this._hasMinLen});
+        for (const payload of this._payload) {
+            this._result.push(payload.length >= n);
+        }
         return this;
     }
 
@@ -169,9 +156,9 @@ class Validator {
      */
     isDigits() {
         const re = /^[0-9]+$/
-        this._isDigits = re.test(this._payload);
-        this._result.push(this._isDigits);
-        this._resultVerbose.push({isDigits: this._isDigits});
+        for (const payload of this._payload) {
+            this._result.push(re.test(payload));
+        }
         return this;
     }
 
@@ -181,9 +168,9 @@ class Validator {
      */
     isOnlyLetters() {
         const re = /^[a-zA-Z]+$/;
-        this._isOnlyLetters = re.test(this._payload);
-        this._result.push(this._isOnlyLetters);
-        this._resultVerbose.push({isOnlyLetters: true});
+        for (const payload of this._payload) {
+            this._result.push(re.test(payload));
+        }
         return this;
     }
 

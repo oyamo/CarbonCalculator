@@ -1,6 +1,6 @@
 const  express = require('express');
 const router =express.Router();
-const {auth} = require('../../middlewares/auth');
+const {auth} = require('../../../middlewares/auth');
 
 router.get('/logout', auth, (req, res) => {
     req.user.clearToken(req.token)

@@ -11,13 +11,13 @@ require('dotenv').config()
 const fs = require('fs');
 
 
-const loginRouter = require('./microservices/auth/login');
-const logoutRouter = require('./microservices/auth/logout');
-const signUpRouter = require('./microservices/auth/signup');
-const myprofileRouter = require('./microservices/users/myProfile');
-const otherProfileRouter = require('./microservices/users/otherUsers')
-const indexRouter = require('./microservices/index');
-const forgotPasswordRouter = require('./microservices/auth/resetpassword');
+const loginRouter = require('./api/v1/auth/login');
+const logoutRouter = require('./api/v1/auth/logout');
+const signUpRouter = require('./api/v1/auth/signup');
+const myprofileRouter = require('./api/v1/users/myProfile');
+const otherProfileRouter = require('./api/v1/users/otherUsers')
+const indexRouter = require('./api/v1');
+const forgotPasswordRouter = require('./api/v1/auth/resetpassword');
 
 
 const app = express();
@@ -36,11 +36,11 @@ app.use(logger('common',{
 
 app.use('/', indexRouter);
 //Microservices
-app.use('/api/auth/signup', signUpRouter);
+app.use('/api/v1/auth', signUpRouter);
 app.use('/api/auth/login', loginRouter);
 app.use('/api/auth/logout', logoutRouter);
 app.use('/api/auth/forgot', forgotPasswordRouter);
-//Current user profile
+//Current user.js profile
 //User must be logged in
 app.use('/api/users/profile', myprofileRouter);
 

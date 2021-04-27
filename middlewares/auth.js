@@ -1,7 +1,10 @@
 const User = require('../models/user');
 
 let auth = (req, res, next) => {
-    let token = req.cookies.auth;
+    let token = req.header("Authorization");
+
+    token = token.replace("Bearer ", "");
+
     User.findByToken(token)
         .then(user => {
             if (!user) return res.status(401)

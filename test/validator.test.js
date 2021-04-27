@@ -16,13 +16,13 @@ describe('Email Validation', ()=>{
 
 describe("Telephone Number test", ()=>{
     it("Should be more than 10 chars", ()=>{
-        assert.strictEqual(false, validator.with("902848").isTelephone().exec())
+        assert.strictEqual(false, validator.with("902848", "9000094").isTelephone().exec())
     });
     it("Only include numbers , - , +, (, )", ()=>{
         assert.strictEqual(false,  validator.with("+09.930484048").isTelephone().exec())
     });
     it("Number with country code", ()=>{
-        assert.strictEqual(true, validator.with('+25479028173').isTelephone().exec())
+        assert.strictEqual(true, validator.with('+254790281734').isTelephone().exec())
     });
 
 })
