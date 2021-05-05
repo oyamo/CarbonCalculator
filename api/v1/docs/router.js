@@ -1,7 +1,8 @@
 const express = require("express")
-const newUserHandler = require('./../users/newUser')
 const router = express.Router()
 
-router.post('/new', newUserHandler)
+router.get("/", ((req, res) => {
+    res.redirect("api/docs")
+}))
 
 module.exports = router
