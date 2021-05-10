@@ -12,25 +12,16 @@
   <component name="ChangeListManager">
     <list default="true" id="6904d61e-0faf-4b33-856c-de2c67306f5e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/v1/auth/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1/auth/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/v1/auth/logout.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1/auth/logout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/v1/users/newUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1/users/newUser.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/auth/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1/auth/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/auth/logout.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1/auth/logout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/auth/resetpassword.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1/auth/resetpassword.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/auth/signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1/auth/signup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/users/myProfile.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/users/otherUsers.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/middlewares/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middlewares/catchSaveProfile.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/middlewares/userByParam.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/companies.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/profiles/education.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/profiles/profile.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/profiles/profileviews.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/profiles/work.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/user" beforeDir="false" afterPath="$PROJECT_DIR$/models/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/validator.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/validator.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/validator.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/validator.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,8 +52,8 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="12.21.0" />
-    <property name="javascript.nodejs.core.library.typings.version" value="12.20.10" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="javascript.nodejs.core.library.typings.version" value="12.20.11" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../reader_api" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -1123,7 +1114,7 @@
       <command value="yarn" />
     </option>
   </component>
-  <component name="RunManager" selected="Mocha.test/validator.test.js">
+  <component name="RunManager" selected="Node.js.bin/www">
     <configuration name="test" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -1148,8 +1139,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Mocha.test/validator.test.js" />
         <item itemvalue="npm.test" />
+        <item itemvalue="Mocha.test/validator.test.js" />
       </list>
     </recent_temporary>
   </component>
@@ -1177,7 +1168,13 @@
       <workItem from="1602651282829" duration="10438000" />
       <workItem from="1602734202138" duration="10945000" />
       <workItem from="1603339183138" duration="4623000" />
-      <workItem from="1619501589304" duration="8918000" />
+      <workItem from="1619501589304" duration="12192000" />
+      <workItem from="1619517133951" duration="4144000" />
+      <workItem from="1619536910812" duration="20000" />
+      <workItem from="1619631233296" duration="13597000" />
+      <workItem from="1619698261959" duration="8427000" />
+      <workItem from="1620189663887" duration="15976000" />
+      <workItem from="1620373379497" duration="24000" />
     </task>
     <servers />
   </component>
@@ -1227,8 +1224,32 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/models/profiles/profile.js</url>
           <line>11</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/api/v1/users/newUser.js</url>
+          <line>22</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/api/v1/users/newUser.js</url>
+          <line>30</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/api/v1/users/newUser.js</url>
+          <line>38</line>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/api/v1/users/newUser.js</url>
+          <line>44</line>
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/api/v1/users/newUser.js</url>
+          <line>52</line>
+          <option name="timeStamp" value="39" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

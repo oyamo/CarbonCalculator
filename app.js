@@ -8,17 +8,18 @@ const cors = require('cors');
 const helmet = require('helmet')
 const compression = require('compression')
 require('dotenv').config()
-const fs = require('fs');
 
 
-const loginRouter = require('./api/v1/auth/login');
-const logoutRouter = require('./api/v1/auth/logout');
-const signUpRouter = require('./api/v1/auth/signup');
-const myprofileRouter = require('./api/v1/users/myProfile');
-const otherProfileRouter = require('./api/v1/users/otherUsers')
-const indexRouter = require('./api/v1');
-const forgotPasswordRouter = require('./api/v1/auth/resetpassword');
+// Swagger UI
+swaggerUi = require("swagger-ui-express");
+swaggerJsdoc = require("./swagger.json")
 
+
+// Import routers
+const userRouter = require("./api/v1/users/router")
+const authRouter = require("./api/v1/auth/router")
+const docRouter = require("./api/v1/docs/router")
+const calcRouter = require("./api/v1/calculator/router")
 
 const app = express();
 
@@ -28,45 +29,38 @@ app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(helmet())
 app.use(compression())
-app.use(logger('common',{
-    stream: fs.createWriteStream(process.env.LOGS_DIR)
-}))
+app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerJsdoc))
 
-app.use('/', indexRouter);
-//Microservices
-app.use('/api/v1/auth', signUpRouter);
-app.use('/api/auth/login', loginRouter);
-app.use('/api/auth/logout', logoutRouter);
-app.use('/api/auth/forgot', forgotPasswordRouter);
-//Current user.js profile
-//User must be logged in
-app.use('/api/users/profile', myprofileRouter);
 
-app.use('/api/users', otherProfileRouter);
-// catch 404 and forward to error handler
-app.use(function (req, res, next) {
-    next(createError(404));
-});
 
+app.use(require("./utils/defaultheaders"));
 // error handler
 
 app.use(function (err, req, res, next) {
     // set locals, only providing error in development
-    res.locals.message = err.message;
-    res.locals.error = req.app.get('env') === 'development' ? err : {};
+    res['locals'].message = err.message;
+    res['locals'].error = req.app.get('env') === 'development' ? err : {};
 
     // render the error page
-    res.status(err.status || 500);
+    res['status']( err.status || 500);
     if(process.env.NODE_ENV === 'development'){
         res.json(err);
     }else{
         res.json({message:"ServerError"});
     }
 });
+
+
+// Set up routes
+app.use("/api/v1/users", userRouter)
+app.use("/api/v1/auth", authRouter)
+app.use("/api/v1/calculator", calcRouter)
+app.use("/", docRouter)
+
 //Database Setup
 mongoose.Promise = global.Promise;
+
 mongoose.connect(process.env.DATABASE,
     {
         useNewUrlParser: true,
@@ -75,10 +69,11 @@ mongoose.connect(process.env.DATABASE,
     },
     err => {
         if (err) {
-            ///Error
+            console.log(err)
         } else {
             console.log('Connected to database');
         }
     });
+
 module.exports = app;
 

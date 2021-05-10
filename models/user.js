@@ -1,8 +1,8 @@
+const crypto = require("crypto")
+
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const crypto = require('crypto');
-
 // Define the user Schema
 const userSchema = mongoose.Schema({
     firstName: {
@@ -14,13 +14,6 @@ const userSchema = mongoose.Schema({
         type: String,
         required: true
     },
-
-    userName: {
-        type: String,
-        trim: true,
-        required: true
-    },
-
     telephone:{
       type: String,
         required: true
@@ -43,7 +36,9 @@ const userSchema = mongoose.Schema({
     age:{
         type: Number
     },
-
+    address: {
+        type:String
+    },
     Authorization: {
         type: String
     },
@@ -53,6 +48,9 @@ const userSchema = mongoose.Schema({
     },
 
     resetToken: {
+        type: String
+    },
+    password:  {
         type: String
     }
 },{
@@ -65,8 +63,29 @@ const userSchema = mongoose.Schema({
  */
 userSchema.pre('save', function (next) {
     const user = this;
-    if(user.isModified('passWord')){
-        user.Authorization = bcrypt.hashSync(user.passWord, 10);
+    if(user.isModified('password')){
+        user.Authorization = jwt.sign(
+            {
+                userId: user._id.toHexString()
+            },
+            process.env.SECRET,
+            {
+                algorithm: 'HS256',
+                expiresIn: process.env.TOKEN_LIFE
+            }
+        );
+        user.refreshToken = jwt.sign(
+            {
+                userId: user._id.toHexString()
+            },
+            process.env.REFRESH_TOKEN_SECRET,
+            {
+                algorithm: 'HS256',
+                expiresIn: process.env.REFRESH_TOKEN_LIFE
+            }
+        );
+
+        user.password = bcrypt.hashSync(user.password, 10);
         next();
     }else{
         next();
@@ -80,54 +99,13 @@ userSchema.pre('save', function (next) {
  * @returns {Promise<unknown>}
  */
 userSchema.methods.attemptLogin = function (password) {
-    const hash = this.passWord;
+    const hash = this.password;
     return new Promise((resolve, reject) => {
         const match = bcrypt.compareSync(password, hash);
         resolve(match);
     })
 };
 
-
-/**
- * Generates a JWT Access token
- * @returns {Promise<unknown>}
- */
-userSchema.methods.generateJWTAccessToken = function () {
-    const user = this;
-    return new Promise((resolve, reject) => {
-        // Generate Access Token
-        user.token = jwt.sign(
-            {
-                userId: user._id.toHexString()
-            },
-            process.env.SECRET,
-            {
-                algorithm: 'HS256',
-                expiresIn: process.env.TOKEN_LIFE
-            }
-        );
-
-        // Generate Refresh token
-        user.refreshToken = jwt.sign(
-            {
-                userId: user._id.toHexString()
-            },
-            process.env.REFRESH_TOKEN_SECRET,
-            {
-                algorithm: 'HS256',
-                expiresIn: process.env.REFRESH_TOKEN_LIFE
-            }
-        );
-
-        user.save((err, user) => {
-            if (!err) {
-                resolve(user);
-            } else {
-                reject(err);
-            }
-        })
-    })
-};
 
 /**
  * Try find user using JWT
@@ -176,7 +154,39 @@ userSchema.methods.clearJWTToken = function () {
     })
 };
 
+userSchema.methods.generateToken = function () {
+    const user = this;
+    user.Authorization = jwt.sign(
+        {
+            userId: user._id.toHexString()
+        },
+        process.env.SECRET,
+        {
+            algorithm: 'HS256',
+            expiresIn: process.env.TOKEN_LIFE
+        }
+    );
+    user.refreshToken = jwt.sign(
+        {
+            userId: user._id.toHexString()
+        },
+        process.env.REFRESH_TOKEN_SECRET,
+        {
+            algorithm: 'HS256',
+            expiresIn: process.env.REFRESH_TOKEN_LIFE
+        }
+    );
 
+   return new Promise((resolve, reject) => {
+       user.save((err, user)=>{
+           if(err) {
+               reject(err)
+           } else {
+               resolve(user)
+           }
+       })
+   })
+}
 /**
  *  Generates reset password token that expires after a given time.
  * @returns {Promise<void>}
@@ -197,7 +207,7 @@ userSchema.methods.generateResetPasswordToken = async function (){
         }
     );
     user.save((err, user)=>{
-      console.log(user)
+
     })
 }
 

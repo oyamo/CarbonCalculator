@@ -1,17 +1,15 @@
-const  express = require('express');
-const router =express.Router();
-const {auth} = require('../../../middlewares/auth');
 
-router.get('/logout', auth, (req, res) => {
+
+module.exports = (req, res) => {
+
     req.user.clearToken(req.token)
-        .then(()=>{
-           return res.status(200)
-                .json({success: true});
-        })
-        .catch(()=>{
-            return res.status(400)
-                .json({message:"logout error"});
-        })
-});
-
-module.exports = router;
+    .then(()=>{
+        return res.status(200)
+        .json({
+            status:{status_message:"Success", status_code : 0}});
+    })
+    .catch(()=>{
+        return res.status(400)
+        .json({message:"logout error"});
+    })
+};

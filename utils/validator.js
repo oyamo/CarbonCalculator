@@ -143,9 +143,10 @@ class Validator {
      * @returns {Validator}
      */
     hasMaxLen(n) {
-        this._hasMaxLen = this._len <= n;
-        this._result.push(this._hasMaxLen);
-        this._resultVerbose.push({hasMaxLen: this._hasMaxLen});
+       for (const payload of this._payload) {
+           this._result.push(payload.length <= n);
+           this._resultVerbose.push({hasMaxLen: this._hasMaxLen});
+       }
         return this;
     }
 
@@ -174,6 +175,16 @@ class Validator {
         return this;
     }
 
+    /**
+     * @return Validator
+     */
+    hasNoNumber() {
+        const re = /^[a-zA-Z\s]+$/;
+        for (const payload of this._payload) {
+            this._result.push(re.test(payload));
+        }
+        return this;
+    }
     /**
      *
      * Smart syntax to eleviate you some pain in the ...
